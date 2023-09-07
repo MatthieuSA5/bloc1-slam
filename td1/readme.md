@@ -1,5 +1,5 @@
 # Markdown
-## Quelques example 
+## Quelques examples
 ### liste d'éléments
 #### liste non ordonnée
 - élément 1
