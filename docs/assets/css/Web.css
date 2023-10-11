@@ -1,30 +1,31 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    margin:0;
 }
 
-/* ----------------------- HEADER / NAVBAR ------------------------- Pas réussis à mettre la bordure de li:hover en haut de header + Hover les éléments aggranndit ma div header */
 .header {
     background-image: url("./../images/header-bg.jpg");
-    background-position-y:-200px; /* Refocus de l'img-background vers le milieu */
-    justify-content: space-between; /* space around aurait pu être bien, mais navbar trop à gauche */
+    background-position-y:-250px;
+    background-position-x:50%;
+    justify-content: space-between;
     display:flex;
-    /*flex-direction: row;*/
     align-items: center;
-    flex-wrap: wrap;
-    background-repeat: no-repeat center;
+    background-repeat: no-repeat;
     background-size: cover;
+    position:relative;
+    height: 10vh;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .header ul {
-    display:flex;
     list-style-type: none;
+    display:flex;
+    align-items: start;
     color:white;
     margin-right: 3em;
-
-}
-
-.header li {
-    margin-top: 15px;
+    margin:0;
+    height:100%;
 }
 
 .header li a {
@@ -34,9 +35,15 @@ body {
     text-align: center;
     text-decoration: none;
     max-width: 1em;
-    height: 1em;
+    height: 100%;
     margin:2em;
-    white-space: nowrap; /* Interdit les elements de revenir a la ligne dans la navbar, pour le About Us en particulier ici */
+    white-space: nowrap;
+}
+
+.header li {
+    position:relative;
+    margin: 0 1em;
+    height: 100%;
 }
 
 .header .Logo {
@@ -44,12 +51,18 @@ body {
     margin-left: 10em;
 }
 
-.header li:hover {
-    border-top: solid 3px white;
-    transition: .1s;
+.header li:hover::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
 
-/*------------------------- MAIN TEXT --------------------------------- */
 .main {
     flex-direction: column;
     display:flex;
@@ -83,10 +96,8 @@ h2 {
 }
 
 .button-style:hover {
-    background-color: rgb(196, 194, 194);
+    background-color: rgb(100, 98, 223);
 }
-
-/* -------------------- Partners -------------------------*/
 
 .partners {
     display:flex;
@@ -95,11 +106,9 @@ h2 {
     flex-wrap:wrap;
 }
 
-/* --------- Footer  ----------------------- */
-
 footer {
     background: rgb(45,68,131);
-    background: linear-gradient(90deg, rgba(45,68,131,1) 0%, rgba(8,154,255,1) 35%, rgba(43,100,189,1) 100%); /* cssgradient.io */
+    background: linear-gradient(90deg, rgba(45,68,131,1) 0%, rgba(8,154,255,1) 35%, rgba(43,100,189,1) 100%);
     width:100%;
     height:5em;
     color:white;
@@ -107,8 +116,6 @@ footer {
     justify-content: center;
     align-items: center;
 }
-
-/* ********** PAGE BLOG *********** */
 
 .container {
     display:flex;
